@@ -2,4 +2,25 @@
   background-color: black;
   height: 60px;
   width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+  .search{
+    margin-left: auto;
+    align-self: center;
+  }
+  .logo{
+    align-self: center;
+    margin-left:45%;
+  }
+  .icon{
+    width: 32px;
+    height: 32px;
+    padding-right: 15px;
+  }
+  .input{
+    height: 32px;
+  }
 }
+

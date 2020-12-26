@@ -1,11 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from '../src/components/header/Header';
+
+import { Header, Search } from '../src/components/index'
 
 function App() {
   return (
     <div className="App">
-        <Header/>
+        <div className="appHome">
+          <Header/>
+          
+        </div>
+        
     </div>
   );
 }
