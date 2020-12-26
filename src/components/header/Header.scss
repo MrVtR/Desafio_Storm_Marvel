@@ -19,11 +19,14 @@
     height: 32px;
     padding-right: 15px;
   }
-  .icon:hover + .input{
+  #checkbox:checked + .input{
       display: inline-block;
   }
   .input{
     height: 32px;
+    display: none;
+  }
+  #checkbox{
     display: none;
   }
 }

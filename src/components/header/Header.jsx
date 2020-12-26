@@ -8,9 +8,16 @@ export default function Header(props) {
   return (
       <div className="header">
         <img src={logo} className="logo" alt=""></img>
+
         <div className="search">
+
+        
+        <label for="checkbox">
           <img src={icon} className="icon" alt=""></img>
-          <input className="input" type="text"></input>
+        </label>
+        <input type="checkbox" id="checkbox"></input>
+
+        <input className="input" type="text"></input>
         </div>
         
       </div>
