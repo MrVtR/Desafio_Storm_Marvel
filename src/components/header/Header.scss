@@ -19,8 +19,12 @@
     height: 32px;
     padding-right: 15px;
   }
+  .icon:hover + .input{
+      display: inline-block;
+  }
   .input{
     height: 32px;
+    display: none;
   }
 }
 
