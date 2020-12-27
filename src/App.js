@@ -21,7 +21,6 @@ function App() {
   }, [url]);
 
   if(product){
-    console.log(product.data.results.length)
     return (
       
       <div className="App">
@@ -29,12 +28,8 @@ function App() {
         <Header/>
       </div>
       <div className="container">
-        <CardContainer image={product.data.results[0].thumbnail.path + "/landscape_incredible.jpg"} name={product.data.results[0].name}/>
-        <CardContainer image={product.data.results[1].thumbnail.path + "/landscape_incredible.jpg"} name={product.data.results[1].name}/>
-        <CardContainer image={product.data.results[2].thumbnail.path + "/landscape_incredible.jpg"} name={product.data.results[2].name}/>
-        <CardContainer image={product.data.results[3].thumbnail.path + "/landscape_incredible.jpg"} name={product.data.results[3].name}/>
-        <CardContainer image={product.data.results[4].thumbnail.path + "/landscape_incredible.jpg"} name={product.data.results[4].name}/>
-        <CardContainer image={product.data.results[5].thumbnail.path + "/landscape_incredible.jpg"} name={product.data.results[5].name}/>
+        {product.data.results.map((Component, key) => (
+        <CardContainer image={Component.thumbnail.path + "/landscape_incredible.jpg"} name={Component.name} key={key} />))}
       </div>
       </div>
     );
