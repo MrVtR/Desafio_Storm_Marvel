@@ -8,7 +8,8 @@
   padding: 10px;
   .search{
     margin-left: auto;
-    align-self: center;
+    display: flex;
+    align-items: center;
   }
   .logo{
     align-self: center;
@@ -30,4 +31,3 @@
     display: none;
   }
 }
-
