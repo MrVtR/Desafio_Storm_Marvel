@@ -1,0 +1,24 @@
+@font-face {
+  font-family: Audiowide;
+  src: url('../../assets/fonts/Audiowide-Regular.ttf');
+}
+
+.cardContainer{
+  width: 50%;
+  height: 30.47vh;
+  display: flex;
+  align-items: flex-end;
+  .textoPersonagem {
+    width: 220px;
+    height: 50px;
+    transform: skew(-12deg);
+    background: #f0f0f0;
+    margin-left: 30px;
+    margin-bottom:30px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-family: 'Audiowide';
+  }
+}
