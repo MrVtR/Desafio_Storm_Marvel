@@ -15,8 +15,8 @@
     height: 50px;
     transform: skew(-12deg);
     background: #f0f0f0;
-    margin-right:220px;
-    margin-bottom:10px ;
+    margin-right:380px;
+    margin-bottom:25px ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,6 +25,8 @@
   }
   .image{
     //width: 30%;
-    margin-left: 20px;
+    width: 70%;
+    height: 100%;
+    //margin-left: 20px;
   }
 }
