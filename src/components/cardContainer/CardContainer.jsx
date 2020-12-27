@@ -1,13 +1,11 @@
 import "./CardContainer.scss";
 
 export default function CardContainer(props) {
-const {color} = props;
- console.log(color);
+const {image, name} = props;
   return (
-      <div className="cardContainer" style={{backgroundColor: color}}>
-        <div class="textoPersonagem">
-          texto
-        </div>
+      <div className="cardContainer">
+        <img src={image} alt="" className="image"></img>
+        <div className="textoPersonagem">{name}</div>
       </div>
       
   );
