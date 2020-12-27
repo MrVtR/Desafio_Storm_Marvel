@@ -8,17 +8,25 @@
   height: 30.47vh;
   display: flex;
   align-items: flex-end;
+  justify-content: space-evenly;
   .textoPersonagem {
-    width: 220px;
+    position: absolute;
+    width: 190px;
     height: 50px;
     transform: skew(-12deg);
     background: #f0f0f0;
-    margin-left: 30px;
-    margin-bottom:30px ;
+    margin-right:380px;
+    margin-bottom:25px ;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 18px;
     font-family: 'Audiowide';
+  }
+  .image{
+    //width: 30%;
+    width: 70%;
+    height: 100%;
+    //margin-left: 20px;
   }
 }
