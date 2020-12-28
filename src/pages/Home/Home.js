@@ -19,13 +19,15 @@ function Home() {
   })
   }, [url]);
 
+ 
   if(product){
+    console.log(product.data.results);
     return (
       <>
         <Header/>
         <div className="container">
           {product.data.results.map((Component, key) => (
-            <CardContainer image={Component.thumbnail.path + "/landscape_incredible.jpg"} name={Component.name} key={key} id={Component.id} />
+            <CardContainer data={Component} image={Component.thumbnail.path + "/landscape_incredible.jpg"} key={key} />
           ))}
         </div>
         </>
