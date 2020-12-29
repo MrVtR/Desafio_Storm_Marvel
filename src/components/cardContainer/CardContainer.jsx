@@ -2,14 +2,17 @@ import "./CardContainer.scss";
 import {Link} from "react-router-dom";
 export default function CardContainer(props) {
 const {image} = props;
-const {name,id,comics,events,series,stories} = props.data;
+const {name,id,comics,events,series,stories,thumbnail,description} = props.data;
 const newTo = { 
   pathname: "/detail", 
   id,
   comics,
   events,
   series,
-  stories
+  stories,
+  thumbnail,
+  name,
+  description,
 };
 if(!UrlExists(image)){
   const imagemCerta = image.slice(0,image.length-3)+"gif";
