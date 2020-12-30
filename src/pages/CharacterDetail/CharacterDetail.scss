@@ -17,9 +17,15 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin-bottom: 10px;
+    align-items: center;
     .comicImage{
       margin-bottom: 15px;
+    }
+    .comicTitle{
+      width:450px;
+      height: auto;
+      font-size: 28px;
+      font-family: 'Audiowide';
     }
   }
   .character{

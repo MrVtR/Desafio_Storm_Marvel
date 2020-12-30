@@ -1,35 +1,50 @@
 import './CharacterDetail.scss';
-import getApi from "../../mocks/getApi";
-import { Header } from '../../components/index'
+import getApi from "../../services/getApi";
+import { Header,Loading } from '../../components/index'
+import { useState,useEffect } from 'react';
 
 function CharacterDetail(props) {
   const {name,id,comics,events,series,stories,thumbnail,description} = props.location;
-  let i=0,j=0,k=0;
+  const [comicsData, setComicsData]=useState([]);
+  const [eventsData, setEventsData]=useState([]);
+  const [seriesData, setSeriesData]=useState([]);
+  const [storiesData, setStoriesData]=useState([]);
+  const [loading, setLoading]=useState(true);
 
-  const comicsMap = comics.items.map((comic) => 
-    getApi(comic.resourceURI+"?ts="));
-  const eventsMap = events.items.map((event) => 
-    getApi(event.resourceURI+"?ts="));
-  const seriesMap = series.items.map((serie) => 
-    getApi(serie.resourceURI+"?ts="));
-  //const storiesMap = comics.items.map((comic,key) => 
-    //getApi(comic.resourceURI+"?ts="));
+  useEffect(() => {
+    (async () =>{
+      const comicsMap = await Promise.all(comics.items.map(async (comic,key) => 
+        await getApi(comic.resourceURI+"?ts=")
+      ));
+      
+      const eventsMap = await Promise.all(events.items.map(async (event,key) => 
+        await getApi(event.resourceURI+"?ts=")));
 
-  comicsMap.forEach(element => {
-    if(element==null)
-      i++;
-  });
-  eventsMap.forEach(element => {
-    if(element==null)
-      j++;
-  });
-  seriesMap.forEach(element => {
-    if(element==null)
-      k++;
-  });
-  if(i==0 && j==0 && k==0)
+      const seriesMap = await Promise.all(series.items.map(async (serie,key) => 
+        await getApi(serie.resourceURI+"?ts=")));
+
+      const storiesMap = await Promise.all(stories.items.map(async (storie,key) => 
+        await getApi(storie.resourceURI+"?ts=")));
+
+        setLoading(false);
+        console.log(storiesMap);
+        setComicsData(comicsMap);
+        setEventsData(eventsMap);
+        setSeriesData(seriesMap);
+        setStoriesData(storiesMap);
+    })()
+  }, [comics.items,events.items,series.items,stories.items])
+  if(loading)
   {
-    console.log(stories);
+    console.log("Carregando");
+    return(
+      <Loading/>
+    )
+  }
+    
+  else
+  {
+    console.log("Carregou");
     return (
       <>
       <Header/>
@@ -44,39 +59,54 @@ function CharacterDetail(props) {
           </div>
         </div>
         <div className="title">Comics</div>
-        <div className="Images">
-          {comicsMap.map((comic, key) => (
-              <img src={comic.data.results[0].thumbnail.path+".jpg"} key={key} alt="" width="350px" height="auto" className="comicImage"/>
+        <div className="Images" width="400px">
+
+          {comicsData.map((comic, key) => (
+            [
+              <figure key={comic.data.results[0].id}>
+                <img src={comic.data.results[0].thumbnail.path+".jpg"} alt="" width="350px" height="auto" className="comicImage"/>
+                <figcaption><h1 className="comicTitle">{comic.data.results[0].title}</h1></figcaption>
+              </figure>
+            ]
           ))}
         </div>
         <div className="title">Series</div>
         <div className="Images">
-          {seriesMap.map((serie, key) => (
-            <>
-              <h1 key={key}>{serie.data.results[0].title}</h1>
-              <img src={serie.data.results[0].thumbnail.path+".jpg"} key={key} alt="" width="350px" height="auto" className="comicImage"/>
-            </>
-          ))}
+          {seriesData.map((serie, key) => ([
+            <figure key={serie.data.results[0].id}>
+              <img src={serie.data.results[0].thumbnail.path+".jpg"} alt="" width="350px" height="350px" className="comicImage"/>
+              <figcaption><h1 className="comicTitle">{serie.data.results[0].title}</h1></figcaption>
+            </figure>
+          ]))}
         </div>
         <div className="title">Stories</div>
+        <div className="Images">
+          {storiesData.map((storie, key) => (
+            storie && ( 
+            <figure key={storie.data.results[0].id}>
+              {storie.data.results[0].thumbnail?.path && <img src={storie.data.results[0].thumbnail.path+".jpg"} alt="" width="350px" height="350px" className="comicImage"/>}
+              <figcaption><h1 className="comicTitle">{storie.data.results[0].title}</h1></figcaption>
+            </figure>
+            )
+          ))}
+        </div>
+
         <div className="title">Events</div>
         <div className="Images">
-          {eventsMap.map((event, key) => (
-              <img src={event.data.results[0].thumbnail.path+".jpg"} key={key} alt="" width="450px" height="auto" className="comicImage"/>
+          {eventsData.map((event, key) => (
+            [
+              <figure key={event.data.results[0].id}>
+                <img src={event.data.results[0].thumbnail.path+".jpg"} alt="" width="350px" height="auto" className="comicImage"/>
+                <figcaption><h1 className="comicTitle">{event.data.results[0].title}</h1></figcaption>
+              </figure>
+            ]
           ))}
         </div>
       </div>
       </>
     );
   }
-  else{
-    return(
-      <div>
-        Não Foi
-      </div>
-    )
-    
+   
   }
-}
 
 export default CharacterDetail;

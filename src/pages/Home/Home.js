@@ -1,20 +1,26 @@
 import './Home.scss';
 
 import { Header, CardContainer } from '../../components/index'
-import getApi from "../../mocks/getApi";
+import getApi from "../../services/getApi";
+import {useState, useEffect} from 'react'
 
 function Home() {
+  const [personagens,setPersonagens] = useState(false);
   const gateway = 'http://gateway.marvel.com/v1/public/characters?ts=';
-  const personagens = getApi(gateway);
+  useEffect(() => {
+    (async () => {
+      const apiResponse = await getApi(gateway);
+      setPersonagens(apiResponse);
+    })();
+  }, []);
 
   if(personagens){
-    console.log(personagens.data.results[0]);
     return (
       <>
         <Header/>
         <div className="container">
           {personagens.data.results.map((Component, key) => (
-            <CardContainer data={Component} image={Component.thumbnail.path + "/landscape_incredible.jpg"} key={key} />
+            <CardContainer data={Component} image={Component.thumbnail.path + "/landscape_incredible."+Component.thumbnail.extension} key={key} />
           ))}
         </div>
         </>
@@ -23,10 +29,9 @@ function Home() {
   else{
     return(
       <div>
-        Não Foi
+        Home não carregada
       </div>
     )
-    
   }
 }
 
