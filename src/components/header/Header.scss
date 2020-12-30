@@ -1,11 +1,19 @@
+@font-face {
+  font-family: Audiowide;
+  src: url('../../assets/fonts/Audiowide-Regular.ttf');
+}
 .header{
   background-color: black;
   height: 60px;
   width: auto;
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
   justify-content: center;
   padding: 10px;
+
+
+ 
   .search{
     margin-left: auto;
     display: flex;
@@ -20,13 +28,34 @@
     padding-right: 15px;
   }
   #checkbox:checked + .input{
-      display: inline-block;
-  }
-  .input{
-    height: 32px;
-    display: none;
+    display: inline-block;
+    //width:400px;
   }
   #checkbox{
     display: none;
+  }
+  .input{
+    border-radius: 15px;
+    width:350px;
+    height: 32px;
+    display: none;
+  }
+  .filtro{
+    margin-top: 11px;
+    position: absolute;
+    background-color: rgb(46, 46, 46);
+    min-width: 350px;
+    .personagemFiltro{
+      display: flex;
+      flex-direction: row;
+      .filtroText{
+        text-align: left;
+        color:white;
+        padding: 20px;
+        font-size: 16px;
+        font-family: Audiowide;
+      }
+    }
+    
   }
 }
