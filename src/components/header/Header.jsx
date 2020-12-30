@@ -1,4 +1,5 @@
 import "./Header.scss";
+import {Link} from "react-router-dom";
 import icon from "../../assets/icons/search-icon-red-md.png";
 import logo from "../../assets/images/marvelLogo.png"
 
@@ -7,7 +8,9 @@ export default function Header(props) {
 
   return (
       <div className="header">
-        <img src={logo} className="logo" alt=""></img>
+        <Link to="/">
+          <img src={logo} className="logo" alt=""></img>
+        </Link>
         <div className="search">
         <label htmlFor="checkbox">
           <img src={icon} className="icon" alt=""></img>

@@ -1,31 +1,26 @@
 import './Home.scss';
-import md5 from "blueimp-md5";
-import {useState, useEffect} from 'react'
-import axios from 'axios';
+
 import { Header, CardContainer } from '../../components/index'
+import getApi from "../../services/getApi";
+import {useState, useEffect} from 'react'
 
 function Home() {
-
-  const [product, setProduct] = useState(null);
-  const ts = 1;
-  const publicApiKey = '1a9d39221ae112b3821a08fd3c419183';
-  const hash = md5(ts + process.env.REACT_APP_NOT_SECRET_CODE+ publicApiKey);
-  const url = 'http://gateway.marvel.com/v1/public/characters?ts=' + ts + '&apikey=' + publicApiKey + '&hash=' + hash;
-
+  const [personagens,setPersonagens] = useState(false);
+  const gateway = 'http://gateway.marvel.com/v1/public/characters?ts=';
   useEffect(() => {
-    axios.get(url)
-    .then(response =>{
-      setProduct(response.data)
-  })
-  }, [url]);
+    (async () => {
+      const apiResponse = await getApi(gateway);
+      setPersonagens(apiResponse);
+    })();
+  }, []);
 
-  if(product){
+  if(personagens){
     return (
       <>
         <Header/>
         <div className="container">
-          {product.data.results.map((Component, key) => (
-            <CardContainer image={Component.thumbnail.path + "/landscape_incredible.jpg"} name={Component.name} key={key} id={Component.id} />
+          {personagens.data.results.map((Component, key) => (
+            <CardContainer data={Component} image={Component.thumbnail.path + "/landscape_incredible."+Component.thumbnail.extension} key={key} />
           ))}
         </div>
         </>
@@ -34,10 +29,9 @@ function Home() {
   else{
     return(
       <div>
-        Não Foi
+        Home não carregada
       </div>
     )
-    
   }
 }
 
