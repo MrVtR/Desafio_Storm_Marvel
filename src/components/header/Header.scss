@@ -8,19 +8,24 @@
   width: auto;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-  justify-content: center;
+  align-items: center;
   padding: 10px;
 
-
- 
-  .search{
-    margin-left: auto;
-    display: flex;
-    align-items: center;
+.Initial{
+  width: 33%;
+}
+.logoDiv {
+  width: 34%;
+  margin-top: 5px;
+  a{
+    width: 34%;
   }
-  .logo{
-    align-self: center;
+ }
+  .search{
+    width:33%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
   .icon{
     width: 32px;
@@ -29,25 +34,25 @@
   }
   #checkbox:checked + .input{
     display: inline-block;
-    //width:400px;
   }
   #checkbox{
     display: none;
   }
   .input{
+    display: none;
     border-radius: 15px;
     width:350px;
     height: 32px;
-    display: none;
   }
   .filtro{
-    margin-top: 11px;
+    margin-top: 22px;
     position: absolute;
     background-color: rgb(46, 46, 46);
     min-width: 350px;
-    .personagemFiltro{
+    a{
       display: flex;
       flex-direction: row;
+    }
       .filtroText{
         text-align: left;
         color:white;
@@ -55,7 +60,5 @@
         font-size: 16px;
         font-family: Audiowide;
       }
-    }
-    
   }
 }
