@@ -53,6 +53,9 @@
     a {
       display: flex;
       flex-direction: row;
+      img {
+        object-fit: cover;
+      }
     }
     .filtroText {
       text-align: left;
@@ -60,6 +63,20 @@
       padding: 20px;
       font-size: 16px;
       font-family: Audiowide;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    .input {
+      width: 230px;
+    }
+    .filtro {
+      min-width: 230px;
+      .filtroText {
+        font-size: 18px;
+      }
     }
   }
 }
