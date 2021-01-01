@@ -3,48 +3,48 @@
   src: url('../../assets/fonts/Audiowide-Regular.ttf');
 }
 
-.Detail{
-  color:white;
+.Detail {
+  color: white;
   height: 100%;
   display: flex;
   flex-direction: column;
-  .title{
+  .title {
     font-size: 60px;
     font-family: 'Audiowide';
     margin-bottom: 20px;
   }
-  .Images{
+  .Images {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
-    .comicImage{
+    .comicImage {
       margin-bottom: 15px;
     }
-    .comicTitle{
-      width:450px;
+    .comicTitle {
+      width: 450px;
       height: auto;
       font-size: 28px;
       font-family: 'Audiowide';
     }
   }
-  .character{
+  .character {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
-    .characterImage{
+    .characterImage {
       margin: 20px 20px 20px 200px;
       width: 450px;
     }
-    .nameDescription{
+    .nameDescription {
       font-family: 'Audiowide';
       margin-top: -5px;
-      .cTitle{
-        color:red;
+      .cTitle {
+        color: red;
         font-size: 24px;
       }
-      .cComponent{
+      .cComponent {
         color: white;
         font-size: 20px;
       }
@@ -56,4 +56,3 @@
 .App {
   height: 100%;
 }
-

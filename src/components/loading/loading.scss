@@ -1,15 +1,14 @@
-
 @font-face {
   font-family: Audiowide;
   src: url('../../assets/fonts/Audiowide-Regular.ttf');
 }
-.loading{
+.loading {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  h1{
-    color:white;
+  h1 {
+    color: white;
     font-family: 'Audiowide';
     font-size: 60px;
   }

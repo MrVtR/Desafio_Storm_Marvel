@@ -1,19 +1,28 @@
-import "./CardContainer.scss";
-import {Link} from "react-router-dom";
+import './CardContainer.scss';
+import { Link } from 'react-router-dom';
 export default function CardContainer(props) {
-const {image} = props;
-const {name,id,comics,events,series,stories,thumbnail,description} = props.data;
-const newTo = { 
-  pathname: "/detail", 
-  id,
-  comics,
-  events,
-  series,
-  stories,
-  thumbnail,
-  name,
-  description,
-};
+  const { image } = props;
+  const {
+    name,
+    id,
+    comics,
+    events,
+    series,
+    stories,
+    thumbnail,
+    description,
+  } = props.data;
+  const newTo = {
+    pathname: '/detail',
+    id,
+    comics,
+    events,
+    series,
+    stories,
+    thumbnail,
+    name,
+    description,
+  };
   return (
     <div className="cardContainer">
       <Link to={newTo}>
@@ -21,4 +30,5 @@ const newTo = {
       </Link>
       <div className="textoPersonagem">{name}</div>
     </div>
-)}
+  );
+}

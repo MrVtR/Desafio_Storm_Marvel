@@ -2,7 +2,7 @@
   font-family: Audiowide;
   src: url('../../assets/fonts/Audiowide-Regular.ttf');
 }
-.header{
+.header {
   background-color: black;
   height: 60px;
   width: auto;
@@ -11,54 +11,55 @@
   align-items: center;
   padding: 10px;
 
-.Initial{
-  width: 33%;
-}
-.logoDiv {
-  width: 34%;
-  margin-top: 5px;
-  a{
-    width: 34%;
+  .Initial {
+    width: 33%;
   }
- }
-  .search{
-    width:33%;
+  .logoDiv {
+    width: 34%;
+    margin-top: 5px;
+    a {
+      width: 34%;
+    }
+  }
+  .search {
+    width: 33%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
   }
-  .icon{
+  .icon {
     width: 32px;
     height: 32px;
     padding-right: 15px;
   }
-  #checkbox:checked + .input{
+  #checkbox:checked + .input {
     display: inline-block;
   }
-  #checkbox{
+  #checkbox {
     display: none;
   }
-  .input{
+  .input {
     display: none;
     border-radius: 15px;
-    width:350px;
+    width: 350px;
     height: 32px;
   }
-  .filtro{
+  .filtro {
+    z-index: 1;
     margin-top: 22px;
     position: absolute;
     background-color: rgb(46, 46, 46);
     min-width: 350px;
-    a{
+    a {
       display: flex;
       flex-direction: row;
     }
-      .filtroText{
-        text-align: left;
-        color:white;
-        padding: 20px;
-        font-size: 16px;
-        font-family: Audiowide;
-      }
+    .filtroText {
+      text-align: left;
+      color: white;
+      padding: 20px;
+      font-size: 16px;
+      font-family: Audiowide;
+    }
   }
 }
