@@ -38,3 +38,12 @@
     }
   }
 }
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .carregarMais {
+    .buttonApi {
+      margin-bottom: 2%;
+      margin-top: 2%;
+    }
+  }
+}
