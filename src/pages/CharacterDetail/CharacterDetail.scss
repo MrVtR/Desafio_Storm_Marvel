@@ -26,6 +26,7 @@
       align-items: center;
     }
     .comicImage {
+      width: 60%;
       margin-bottom: 15px;
     }
     .comicTitle {
@@ -41,13 +42,12 @@
     align-items: flex-start;
     justify-content: flex-start;
     .characterImage {
-      margin-left: 3%;
-      width: 45%;
+      width: 450px;
+      margin: 3%;
     }
     .nameDescription {
       font-family: 'Audiowide';
       margin-top: -5px;
-      margin-left: 2%;
       .cTitle {
         color: red;
         font-size: 24px;
@@ -86,6 +86,9 @@
     }
     .character {
       align-items: center;
+      .characterImage {
+        width: 45%;
+      }
       .nameDescription {
         .cTitle {
           font-size: 22px;
@@ -118,6 +121,9 @@
     }
     .character {
       align-items: center;
+      .characterImage {
+        width: 45%;
+      }
       .nameDescription {
         .cTitle {
           font-size: 18px;
@@ -152,6 +158,9 @@
     }
     .character {
       align-items: center;
+      .characterImage {
+        width: 45%;
+      }
       .nameDescription {
         .cTitle {
           font-size: 18px;
