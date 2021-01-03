@@ -7,6 +7,7 @@ function Home() {
   const [personagens, setPersonagens] = useState([]);
   const [contador, setContador] = useState(20);
   const gateway = 'http://gateway.marvel.com/v1/public/characters?ts=';
+  let arrayMaster;
 
   useEffect(() => {
     (async () => {
@@ -15,7 +16,8 @@ function Home() {
     })();
   }, []);
 
-  async function CarregarMaisPersonagens() {
+  async function CarregarMaisPersonagens(arrayMaster) {
+    const jump = arrayMaster + 1;
     setContador(contador + 20);
     const gatewayCarregarMais =
       'http://gateway.marvel.com/v1/public/characters?offset=' +
@@ -27,29 +29,34 @@ function Home() {
       apiResponse.data.limit + apiResponse.data.offset,
     );
     setPersonagens((arrayAntigo) => [...arrayAntigo, apiResponse]);
+    console.log('Indice de jump:', jump);
+    document.getElementById(jump).scrollIntoView();
   }
 
   if (personagens) {
+    console.log(personagens);
     return (
       <>
         <Header />
-        <div className="container">
-          {personagens.map((Component, key) =>
-            Component.data.results.map((item, key) => (
+        {personagens.map((Component, arrayMasterKey) => [
+          (arrayMaster = arrayMasterKey),
+          <div id={arrayMasterKey} className="container" key={arrayMasterKey}>
+            {Component.data.results.map((item, itemKey) => (
               <CardContainer
                 data={item}
                 image={item.thumbnail.path + '.' + item.thumbnail.extension}
-                key={key}
+                key={itemKey}
               />
-            )),
-          )}
-        </div>
+            ))}
+          </div>,
+        ])}
+
         <div className="carregarMais">
           <input
             type="button"
             className="buttonApi"
             value="Carregar Mais"
-            onClick={CarregarMaisPersonagens}
+            onClick={() => CarregarMaisPersonagens(arrayMaster)}
           />
         </div>
       </>
