@@ -25,7 +25,7 @@ export default function Header(props) {
     if (document.querySelector('.check').checked) {
       if (filtroStyle) filtroStyle.style.display = 'none';
     } else {
-      if (filtroStyle) filtroStyle.style.display = 'block';
+      if (!filtroStyle) document.getElementById('input').focus();
     }
   }
   if (filtro && document.getElementById('input').value.length > 0) {
@@ -96,7 +96,7 @@ export default function Header(props) {
           <label htmlFor="checkbox" onClick={MudarStyleFiltro}>
             <img src={icon} className="icon" alt=""></img>
           </label>
-          <div>
+          <div className="headerInput">
             <input type="checkbox" className="check" id="checkbox"></input>
             <input
               className="input"
