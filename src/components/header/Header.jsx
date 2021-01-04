@@ -24,15 +24,13 @@ export default function Header(props) {
   function MudarStyleFiltro() {
     const filtroStyle = document.querySelector('.filtro');
     const input = document.getElementById('input');
-    if (document.querySelector('.check').checked) {
-      if (filtroStyle) setFiltro(false);
-    } else {
-      if (!filtroStyle) {
-        window.setTimeout(function () {
-          input.focus();
-          input.value = '';
-        }, 0);
-      }
+    if (document.querySelector('.check').checked && filtroStyle)
+      setFiltro(false);
+    else if (!filtroStyle) {
+      window.setTimeout(function () {
+        input.focus();
+        input.value = '';
+      }, 0);
     }
   }
   if (filtro && document.getElementById('input').value.length > 0) {

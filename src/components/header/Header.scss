@@ -2,6 +2,8 @@
   font-family: Audiowide;
   src: url('../../assets/fonts/Audiowide-Regular.ttf');
 }
+$width_icon: 32px;
+$height_logo: 32px;
 .header {
   background-color: black;
   height: 80px;
@@ -32,25 +34,19 @@
     align-items: center;
   }
   .icon {
-    width: 32px;
-    height: 32px;
+    width: $width_icon;
+    height: $width_icon;
     margin-right: 10px;
   }
   .cancel {
-    //display: none;
-    width: 32px;
-    height: 32px;
+    width: $width_icon;
+    height: $width_icon;
     margin: 0 5px;
   }
   .headerInput {
     display: flex;
     flex-direction: row;
     align-items: center;
-    #checkbox:not(:checked) ~ .checkCancel {
-      .cancel {
-        display: none;
-      }
-    }
     #checkbox:checked ~ .input {
       transition: right 1s ease;
       display: inline-block;
@@ -70,7 +66,6 @@
     border-radius: 15px;
     width: 320px;
     height: 32px;
-    //background-color: black;
   }
   .input:focus {
     outline: 0;
@@ -120,15 +115,16 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
+  $width_input: 205px;
   .header {
     .input {
-      width: 205px;
+      width: $width_input;
     }
     .search {
       margin-right: 10px;
     }
     .filtro {
-      min-width: 205px;
+      min-width: $width_input;
       .filtroText {
         font-size: 18px;
         padding: 0;
@@ -139,12 +135,13 @@
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
+  $width_input: 205px;
   .header {
     .Initial {
       display: none;
     }
     .input {
-      width: 210px;
+      width: $width_input;
     }
     .logoDiv {
       width: 30%;
@@ -159,11 +156,10 @@
       margin-right: 10px;
     }
     .filtro {
-      min-width: 317px;
+      min-width: $width_input;
       a {
         img {
-          width: 40%;
-          object-fit: cover;
+          width: 30%;
         }
       }
       .filtroText {
@@ -204,7 +200,6 @@
       a {
         img {
           width: 40%;
-          object-fit: cover;
         }
       }
       .filtroText {
