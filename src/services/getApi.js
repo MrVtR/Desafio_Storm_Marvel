@@ -3,11 +3,18 @@ import axios from 'axios';
 
 async function GetApi(gateway) {
   const ts = 1;
-  const publicApiKey = '341c38efd01a1b4e7f0a28c32b393ec3';
   const hash = md5(
-    ts + process.env.REACT_APP_MARVEL_PRIVATE_KEY + publicApiKey,
+    ts +
+      process.env.REACT_APP_MARVEL_PRIVATE_KEY +
+      process.env.REACT_APP_MARVEL_PUBLIC_KEY,
   );
-  const url = gateway + ts + '&apikey=' + publicApiKey + '&hash=' + hash;
+  const url =
+    gateway +
+    ts +
+    '&apikey=' +
+    process.env.REACT_APP_MARVEL_PUBLIC_KEY +
+    '&hash=' +
+    hash;
 
   try {
     const request = await axios.get(url);

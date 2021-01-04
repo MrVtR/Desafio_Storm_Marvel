@@ -62,7 +62,7 @@ function CharacterDetail(props) {
         <div className="Detail">
           <div className="character">
             <img
-              src={thumbnail.path + '.jpg'}
+              src={thumbnail.path + '.' + thumbnail.extension}
               alt=""
               className="characterImage"
             />
@@ -70,84 +70,121 @@ function CharacterDetail(props) {
               <p className="cTitle">Name:</p>
               <p className="cComponent">{name}</p>
               <p className="cTitle">Description:</p>
-              <p className="cComponent">{description}</p>
+              {description ? (
+                <p className="cComponent">{description}</p>
+              ) : (
+                <p className="cComponent">Description not available</p>
+              )}
             </div>
           </div>
           <div className="title">Comics</div>
-          <div className="Images" width="400px">
-            {comicsData.map((comic, key) => [
-              <figure key={key}>
-                <img
-                  src={comic.data.results[0].thumbnail.path + '.jpg'}
-                  alt=""
-                  width="350px"
-                  height="auto"
-                  className="comicImage"
-                />
-                <figcaption>
-                  <h1 className="comicTitle">{comic.data.results[0].title}</h1>
-                </figcaption>
-              </figure>,
-            ])}
-          </div>
+          {comicsData.length > 0 ? (
+            <div className="Images" width="400px">
+              {comicsData.map((comic, key) => [
+                <figure key={key}>
+                  <img
+                    src={comic.data.results[0].thumbnail.path + '.jpg'}
+                    alt=""
+                    width="350px"
+                    height="auto"
+                    className="comicImage"
+                  />
+                  <figcaption>
+                    <h1 className="comicTitle">
+                      {comic.data.results[0].title}
+                    </h1>
+                  </figcaption>
+                </figure>,
+              ])}
+            </div>
+          ) : (
+            <div className="title" style={{ fontSize: '40px', color: 'red' }}>
+              Comics not available
+            </div>
+          )}
+
           <div className="title">Series</div>
-          <div className="Images">
-            {seriesData.map((serie, key) => [
-              <figure key={key}>
-                <img
-                  src={serie.data.results[0].thumbnail.path + '.jpg'}
-                  alt=""
-                  width="350px"
-                  height="350px"
-                  className="comicImage"
-                />
-                <figcaption>
-                  <h1 className="comicTitle">{serie.data.results[0].title}</h1>
-                </figcaption>
-              </figure>,
-            ])}
-          </div>
+          {seriesData.length > 0 ? (
+            <div className="Images">
+              {seriesData.map((serie, key) => [
+                <figure key={key}>
+                  <img
+                    src={serie.data.results[0].thumbnail.path + '.jpg'}
+                    alt=""
+                    width="350px"
+                    height="350px"
+                    className="comicImage"
+                  />
+                  <figcaption>
+                    <h1 className="comicTitle">
+                      {serie.data.results[0].title}
+                    </h1>
+                  </figcaption>
+                </figure>,
+              ])}
+            </div>
+          ) : (
+            <div className="title" style={{ fontSize: '40px', color: 'red' }}>
+              Series not available
+            </div>
+          )}
+
           <div className="title">Stories</div>
-          <div className="Images">
-            {storiesData.map(
-              (storie, key) =>
-                storie && (
-                  <figure key={key}>
-                    {storie.data.results[0].thumbnail?.path && (
-                      <img
-                        src={storie.data.results[0].thumbnail.path + '.jpg'}
-                        alt=""
-                        width="350px"
-                        height="350px"
-                        className="comicImage"
-                      />
-                    )}
-                    <figcaption>
-                      <h1 className="comicTitle">
-                        {storie.data.results[0].title}
-                      </h1>
-                    </figcaption>
-                  </figure>
-                ),
-            )}
-          </div>
+          {storiesData.length > 0 ? (
+            <div className="Images">
+              {storiesData.map(
+                (storie, key) =>
+                  storie && (
+                    <figure key={key}>
+                      {storie.data.results[0].thumbnail?.path && (
+                        <img
+                          src={storie.data.results[0].thumbnail.path + '.jpg'}
+                          alt=""
+                          width="350px"
+                          height="350px"
+                          className="comicImage"
+                        />
+                      )}
+                      <figcaption>
+                        <h1 className="comicTitle">
+                          {storie.data.results[0].title}
+                        </h1>
+                      </figcaption>
+                    </figure>
+                  ),
+              )}
+            </div>
+          ) : (
+            <div className="title" style={{ fontSize: '40px', color: 'red' }}>
+              Stories not available
+            </div>
+          )}
+
           <div className="title">Events</div>
-          <div className="Images">
-            {eventsData.map((event, key) => [
-              <figure key={key}>
-                <img
-                  src={event.data.results[0].thumbnail.path + '.jpg'}
-                  alt=""
-                  width="350px"
-                  height="auto"
-                  className="comicImage"
-                />
-                <figcaption>
-                  <h1 className="comicTitle">{event.data.results[0].title}</h1>
-                </figcaption>
-              </figure>,
-            ])}
-          </div>
+          {eventsData.length > 0 ? (
+            <div className="Images">
+              {eventsData.map((event, key) => [
+                <figure key={key}>
+                  <img
+                    src={event.data.results[0].thumbnail.path + '.jpg'}
+                    alt=""
+                    width="350px"
+                    height="auto"
+                    className="comicImage"
+                  />
+                  <figcaption>
+                    <h1 className="comicTitle">
+                      {event.data.results[0].title}
+                    </h1>
+                  </figcaption>
+                </figure>,
+              ])}
+            </div>
+          ) : (
+            <div className="title" style={{ fontSize: '40px', color: 'red' }}>
+              Events not available
+            </div>
+          )}
         </div>
       </>
     );
