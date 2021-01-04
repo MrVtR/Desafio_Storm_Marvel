@@ -7,7 +7,7 @@ function Home() {
   const [personagens, setPersonagens] = useState([]);
   const [contador, setContador] = useState(20);
   const gateway = 'https://gateway.marvel.com/v1/public/characters?ts=';
-  let arrayMaster;
+  let arrayMasterIndex;
 
   useEffect(() => {
     (async () => {
@@ -16,8 +16,8 @@ function Home() {
     })();
   }, []);
 
-  async function CarregarMaisPersonagens(arrayMaster) {
-    const jump = arrayMaster + 1;
+  async function CarregarMaisPersonagens(arrayMasterIndex) {
+    const jump = arrayMasterIndex + 1;
     setContador(contador + 20);
     const gatewayCarregarMais =
       'https://gateway.marvel.com/v1/public/characters?offset=' +
@@ -33,7 +33,7 @@ function Home() {
       <>
         <Header />
         {personagens.map((Component, arrayMasterKey) => [
-          (arrayMaster = arrayMasterKey),
+          (arrayMasterIndex = arrayMasterKey),
           <div id={arrayMasterKey} className="container" key={arrayMasterKey}>
             {Component.data.results.map((item, itemKey) => (
               <CardContainer
@@ -50,7 +50,7 @@ function Home() {
             type="button"
             className="buttonApi"
             value="Carregar Mais"
-            onClick={() => CarregarMaisPersonagens(arrayMaster)}
+            onClick={() => CarregarMaisPersonagens(arrayMasterIndex)}
           />
         </div>
       </>
