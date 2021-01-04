@@ -26,25 +26,21 @@ function CharacterDetail(props) {
           async (comic) => await getApi(comic.resourceURI + '?ts='),
         ),
       );
-
       const eventsMap = await Promise.all(
         events.items.map(
           async (event) => await getApi(event.resourceURI + '?ts='),
         ),
       );
-
       const seriesMap = await Promise.all(
         series.items.map(
           async (serie) => await getApi(serie.resourceURI + '?ts='),
         ),
       );
-
       const storiesMap = await Promise.all(
         stories.items.map(
           async (storie) => await getApi(storie.resourceURI + '?ts='),
         ),
       );
-
       setLoading(false);
       setComicsData(comicsMap);
       setEventsData(eventsMap);
@@ -52,6 +48,7 @@ function CharacterDetail(props) {
       setStoriesData(storiesMap);
     })();
   }, [comics.items, events.items, series.items, stories.items]);
+
   if (loading) {
     return <Loading />;
   } else {
@@ -76,6 +73,7 @@ function CharacterDetail(props) {
               )}
             </div>
           </div>
+
           <div className="title">Comics</div>
           {comicsData.length > 0 ? (
             <div className="Images" width="400px">

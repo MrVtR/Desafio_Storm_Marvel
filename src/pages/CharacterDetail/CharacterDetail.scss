@@ -3,6 +3,11 @@
   src: url('../../assets/fonts/Audiowide-Regular.ttf');
 }
 
+$width_image: 100%;
+$margin_figure: 0;
+$width_title: 100%;
+$height_image: 100%;
+
 .Detail {
   color: white;
   height: 100%;
@@ -20,7 +25,7 @@
     align-items: flex-start;
     figure {
       width: 45%;
-      margin: 0;
+      margin: $margin_figure;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -74,14 +79,14 @@
     }
     .Images {
       figure {
-        margin: 0;
+        margin: $margin_figure;
       }
       .comicImage {
-        width: 100%;
-        height: 100%;
+        width: $width_image;
+        height: $height_image;
       }
       .comicTitle {
-        width: 100%;
+        width: $width_title;
         font-size: 24px;
       }
     }
@@ -109,14 +114,14 @@
     }
     .Images {
       figure {
-        margin: 0;
+        margin: $margin_figure;
       }
       .comicImage {
-        width: 100%;
-        height: 100%;
+        width: $width_image;
+        height: $height_image;
       }
       .comicTitle {
-        width: 100%;
+        width: $width_title;
         font-size: 20px;
       }
     }
@@ -145,14 +150,14 @@
     .Images {
       figure {
         width: 80%;
-        margin: 0;
+        margin: $margin_figure;
       }
       .comicImage {
-        width: 100%;
-        height: 100%;
+        width: $width_image;
+        height: $height_image;
       }
       .comicTitle {
-        width: 100%;
+        width: $width_title;
         margin-top: 0;
         font-size: 20px;
       }
