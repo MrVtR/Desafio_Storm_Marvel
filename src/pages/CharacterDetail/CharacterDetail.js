@@ -46,7 +46,6 @@ function CharacterDetail(props) {
       );
 
       setLoading(false);
-      console.log(storiesMap);
       setComicsData(comicsMap);
       setEventsData(eventsMap);
       setSeriesData(seriesMap);

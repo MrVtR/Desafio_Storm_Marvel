@@ -18,7 +18,6 @@ export default function Header(props) {
       const responseFiltro = await getApi(gateway);
       setFiltro(responseFiltro);
     } else {
-      console.log(document.getElementById('input').value.length);
       setFiltro(false);
     }
   }

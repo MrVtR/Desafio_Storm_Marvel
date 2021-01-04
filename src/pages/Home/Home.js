@@ -24,17 +24,11 @@ function Home() {
       contador +
       '&ts=';
     const apiResponse = await getApi(gatewayCarregarMais);
-    console.log(
-      'Total de heróis carregado:',
-      apiResponse.data.limit + apiResponse.data.offset,
-    );
     setPersonagens((arrayAntigo) => [...arrayAntigo, apiResponse]);
-    console.log('Indice de jump:', jump);
     document.getElementById(jump).scrollIntoView();
   }
 
   if (personagens) {
-    console.log(personagens);
     return (
       <>
         <Header />
