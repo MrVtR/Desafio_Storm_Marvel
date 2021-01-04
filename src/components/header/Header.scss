@@ -52,10 +52,12 @@
       }
     }
     #checkbox:checked ~ .input {
+      transition: right 1s ease;
       display: inline-block;
     }
     #checkbox:checked ~ .checkCancel {
       .cancel {
+        transition: right 1s ease;
         display: inline-block;
       }
     }

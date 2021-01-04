@@ -11,7 +11,6 @@ export default function Header(props) {
 
   async function VerInput() {
     if (document.getElementById('input').value.length > 0) {
-      console.log(document.getElementById('input').value.length);
       const gateway =
         'http://gateway.marvel.com/v1/public/characters?nameStartsWith=' +
         document.getElementById('input').value +
@@ -27,17 +26,12 @@ export default function Header(props) {
     const filtroStyle = document.querySelector('.filtro');
     const input = document.getElementById('input');
     if (document.querySelector('.check').checked) {
-      if (filtroStyle) {
-        filtroStyle.style.display = 'none';
-      }
+      if (filtroStyle) setFiltro(false);
     } else {
       if (!filtroStyle) {
         window.setTimeout(function () {
           input.focus();
-        }, 0);
-      } else {
-        window.setTimeout(function () {
-          input.focus();
+          input.value = '';
         }, 0);
       }
     }
