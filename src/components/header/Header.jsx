@@ -1,5 +1,6 @@
 import './Header.scss';
 import { Link } from 'react-router-dom';
+import cancel from '../../assets/icons/cancel.jpg';
 import icon from '../../assets/icons/search-icon-red-md.png';
 import logo from '../../assets/images/marvelLogo.png';
 import getApi from '../../services/getApi';
@@ -10,6 +11,7 @@ export default function Header(props) {
 
   async function VerInput() {
     if (document.getElementById('input').value.length > 0) {
+      console.log(document.getElementById('input').value.length);
       const gateway =
         'http://gateway.marvel.com/v1/public/characters?nameStartsWith=' +
         document.getElementById('input').value +
@@ -17,15 +19,27 @@ export default function Header(props) {
       const responseFiltro = await getApi(gateway);
       setFiltro(responseFiltro);
     } else {
+      console.log(document.getElementById('input').value.length);
       setFiltro(false);
     }
   }
   function MudarStyleFiltro() {
     const filtroStyle = document.querySelector('.filtro');
+    const input = document.getElementById('input');
     if (document.querySelector('.check').checked) {
-      if (filtroStyle) filtroStyle.style.display = 'none';
+      if (filtroStyle) {
+        filtroStyle.style.display = 'none';
+      }
     } else {
-      if (!filtroStyle) document.getElementById('input').focus();
+      if (!filtroStyle) {
+        window.setTimeout(function () {
+          input.focus();
+        }, 0);
+      } else {
+        window.setTimeout(function () {
+          input.focus();
+        }, 0);
+      }
     }
   }
   if (filtro && document.getElementById('input').value.length > 0) {
@@ -70,7 +84,7 @@ export default function Header(props) {
                 ))}
               </div>
             </label>
-            <div className="inputDiv">
+            <div className="headerInput">
               <input type="checkbox" className="check" id="checkbox"></input>
               <input
                 className="input"
@@ -78,6 +92,13 @@ export default function Header(props) {
                 id="input"
                 onChange={VerInput}
               ></input>
+              <label
+                htmlFor="checkbox"
+                onClick={MudarStyleFiltro}
+                className="checkCancel"
+              >
+                <img src={cancel} alt="" className="cancel" />
+              </label>
             </div>
           </div>
         </div>
@@ -96,6 +117,7 @@ export default function Header(props) {
           <label htmlFor="checkbox" onClick={MudarStyleFiltro}>
             <img src={icon} className="icon" alt=""></img>
           </label>
+
           <div className="headerInput">
             <input type="checkbox" className="check" id="checkbox"></input>
             <input
@@ -104,6 +126,13 @@ export default function Header(props) {
               id="input"
               onChange={VerInput}
             ></input>
+            <label
+              htmlFor="checkbox"
+              onClick={MudarStyleFiltro}
+              className="checkCancel"
+            >
+              <img src={cancel} alt="" className="cancel" />
+            </label>
           </div>
         </div>
       </div>
