@@ -29,7 +29,7 @@ Para instalar as dependências do projeto localmente, utilize a instrução abai
 ## Execução
 Para executar o programa é necessário instalar as dependências utilizadas, que estão no package.json e após isso executar o projeto,para estar operações, utilize os comandos abaixo:
 1. Digite no terminal ```yarn start``` para rodar o projeto em modo desenvolvimento.
-2. Caso queira testar a aplicação em um ambiente de produção, utilize o Deploy feito durante o projeto que pode ser encontrado na seção About deste repositório.
+2. Caso queira testar a aplicação em um ambiente de produção, utilize o [Deploy](https://marvel-api-mrvtr.netlify.app) totalmente funcional feito durante o projeto
 
 ## Autores
 * Vítor Ribeiro ([MrVtR](https://github.com/MrVtR))
