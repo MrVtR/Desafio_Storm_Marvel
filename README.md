@@ -36,4 +36,13 @@ Para executar o programa é necessário instalar as dependências utilizadas, qu
 
 ## Imagens/screenshots
 
-![Imagem](https://github.com/Infinitemarcus/Hackerspace-template/blob/master/exemplo.png)
+![Imagem](https://github.com/MrVtR/Desafio_Storm_Marvel/blob/main/imagesGithub/home.PNG)
+
+---
+![Imagem](https://github.com/MrVtR/Desafio_Storm_Marvel/blob/main/imagesGithub/loading.PNG)
+
+---
+![Imagem](https://github.com/MrVtR/Desafio_Storm_Marvel/blob/main/imagesGithub/Detail.PNG)
+
+---
+![Imagem](https://github.com/MrVtR/Desafio_Storm_Marvel/blob/main/imagesGithub/filtro.PNG)
