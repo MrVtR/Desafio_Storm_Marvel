@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 function Home() {
   const [personagens, setPersonagens] = useState([]);
   const [contador, setContador] = useState(20);
-  const gateway = 'http://gateway.marvel.com/v1/public/characters?ts=';
+  const gateway = 'https://gateway.marvel.com/v1/public/characters?ts=';
   let arrayMaster;
 
   useEffect(() => {
