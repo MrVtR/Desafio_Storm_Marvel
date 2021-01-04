@@ -47,6 +47,11 @@ $height_logo: 32px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    #checkbox:not(:checked) ~ .checkCancel {
+      .cancel {
+        display: none;
+      }
+    }
     #checkbox:checked ~ .input {
       transition: right 1s ease;
       display: inline-block;
