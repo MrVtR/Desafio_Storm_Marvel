@@ -18,7 +18,6 @@ function CharacterDetail(props) {
   const [seriesData, setSeriesData] = useState([]);
   const [storiesData, setStoriesData] = useState([]);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     (async () => {
       const comicsMap = await Promise.all(

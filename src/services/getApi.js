@@ -2,6 +2,10 @@ import md5 from 'blueimp-md5';
 import axios from 'axios';
 
 async function GetApi(gateway) {
+  if (!gateway.includes('https')) {
+    gateway = [gateway.slice(0, 4), 's', gateway.slice(4)].join('');
+  }
+
   const ts = 1;
   const hash = md5(
     ts +
