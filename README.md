@@ -2,9 +2,9 @@
 
 ## Conceito do projeto
 O projeto consiste em efetuar um site responsivo que possa fazer requisições na [API criada pela a marvel](https://developer.marvel.com), sendo possível navegar pela biblioteca de personagens da Marvel. O site criado conta com três funções feitas:
-1. Lista de Personagens - Página com a possibilidade de carregar todos os personagens da API, através de múltiplas requisições em formato de "Load More", ou seja, conforme o usuário quiser mais personagens na página, basta apertar o botão de "Carregar Mais"
-2. Filtragem de Resultados - Função com o objetivo de pesquisar personagens que começam com a string inserida no Input de filtro, esta função é capaz de pesquisar na API toda e retornar os resultados desejados pelo usuário, sendo possível conferir os detalhes de cada personagem do filtro ao clicar no icone da sua divisão. 
-3. Detalhes do Personagem - Página com a possibilidade de requisitar todos os principais detalhes do personagem na API, foi programado para que o usuário possa ver os seguintes itens: 
+1. **Lista de Personagens** - Página com a possibilidade de carregar todos os personagens da API, através de múltiplas requisições em formato de "Load More", ou seja, conforme o usuário quiser mais personagens na página, basta apertar o botão de "Carregar Mais"
+2. **Filtragem de Resultados** - Função com o objetivo de pesquisar personagens que começam com a string inserida no Input de filtro, esta função é capaz de pesquisar na API toda e retornar os resultados desejados pelo usuário, sendo possível conferir os detalhes de cada personagem do filtro ao clicar no icone da sua divisão. 
+3. **Detalhes do Personagem** - Página com a possibilidade de requisitar todos os principais detalhes do personagem na API, foi programado para que o usuário possa ver os seguintes itens: 
 ```Foto do personagem, Nome, Descrição,além dos Quadrinhos, Histórias, Séries e Eventos que o personagem participa```
   
 ## Pré-requisitos e recursos utilizados
