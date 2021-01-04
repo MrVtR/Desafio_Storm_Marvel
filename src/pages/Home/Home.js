@@ -20,7 +20,7 @@ function Home() {
     const jump = arrayMaster + 1;
     setContador(contador + 20);
     const gatewayCarregarMais =
-      'http://gateway.marvel.com/v1/public/characters?offset=' +
+      'https://gateway.marvel.com/v1/public/characters?offset=' +
       contador +
       '&ts=';
     const apiResponse = await getApi(gatewayCarregarMais);

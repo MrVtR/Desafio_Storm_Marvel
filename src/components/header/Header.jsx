@@ -12,7 +12,7 @@ export default function Header(props) {
   async function VerInput() {
     if (document.getElementById('input').value.length > 0) {
       const gateway =
-        'http://gateway.marvel.com/v1/public/characters?nameStartsWith=' +
+        'https://gateway.marvel.com/v1/public/characters?nameStartsWith=' +
         document.getElementById('input').value +
         '&ts=';
       const responseFiltro = await getApi(gateway);
