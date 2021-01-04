@@ -5,7 +5,6 @@
 
 $width_image: 100%;
 $width_title: 100%;
-$height_image: 100%;
 $margin_figure: 0;
 $media_Query_margin_bottom: 10px;
 
@@ -39,6 +38,7 @@ $media_Query_margin_bottom: 10px;
     }
     .comicImage {
       width: 60%;
+      height: auto;
       margin-bottom: 15px;
     }
     .comicTitle {
@@ -90,7 +90,6 @@ $media_Query_margin_bottom: 10px;
       }
       .comicImage {
         width: $width_image;
-        height: $height_image;
       }
       .comicTitle {
         width: $width_title;
@@ -129,7 +128,6 @@ $media_Query_margin_bottom: 10px;
       }
       .comicImage {
         width: $width_image;
-        height: $height_image;
       }
       .comicTitle {
         width: $width_title;
@@ -169,7 +167,6 @@ $media_Query_margin_bottom: 10px;
       }
       .comicImage {
         width: $width_image;
-        height: $height_image;
       }
       .comicTitle {
         width: $width_title;
