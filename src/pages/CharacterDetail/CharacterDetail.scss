@@ -4,9 +4,10 @@
 }
 
 $width_image: 100%;
-$margin_figure: 0;
 $width_title: 100%;
 $height_image: 100%;
+$margin_figure: 0;
+$media_Query_margin_bottom: 10px;
 
 .Detail {
   color: white;
@@ -15,6 +16,12 @@ $height_image: 100%;
   flex-direction: column;
   .title {
     font-size: 60px;
+    font-family: 'Audiowide';
+    margin-bottom: 20px;
+    color: red;
+  }
+  .notAvailable {
+    font-size: 40px;
     font-family: 'Audiowide';
     margin-bottom: 20px;
   }
@@ -75,7 +82,7 @@ $height_image: 100%;
   .Detail {
     width: 100%;
     .title {
-      margin-bottom: 10px;
+      margin-bottom: $media_Query_margin_bottom;
     }
     .Images {
       figure {
@@ -109,8 +116,11 @@ $height_image: 100%;
 @media (min-width: 480px) and(max-width: 767px) {
   .Detail {
     .title {
-      margin-bottom: 10px;
+      margin-bottom: $media_Query_margin_bottom;
       font-size: 54px;
+    }
+    .notAvailable {
+      font-size: 34px;
     }
     .Images {
       figure {
@@ -144,8 +154,11 @@ $height_image: 100%;
 @media (max-width: 479px) {
   .Detail {
     .title {
-      margin-bottom: 10px;
+      margin-bottom: $media_Query_margin_bottom;
       font-size: 50px;
+    }
+    .notAvailable {
+      font-size: 30px;
     }
     .Images {
       figure {

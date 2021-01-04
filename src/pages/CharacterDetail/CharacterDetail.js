@@ -95,9 +95,7 @@ function CharacterDetail(props) {
               ])}
             </div>
           ) : (
-            <div className="title" style={{ fontSize: '40px', color: 'red' }}>
-              Comics not available
-            </div>
+            <div className="notAvailable">Comics not available</div>
           )}
 
           <div className="title">Series</div>
@@ -121,9 +119,7 @@ function CharacterDetail(props) {
               ])}
             </div>
           ) : (
-            <div className="title" style={{ fontSize: '40px', color: 'red' }}>
-              Series not available
-            </div>
+            <div className="notAvailable">Series not available</div>
           )}
 
           <div className="title">Stories</div>
@@ -152,9 +148,7 @@ function CharacterDetail(props) {
               )}
             </div>
           ) : (
-            <div className="title" style={{ fontSize: '40px', color: 'red' }}>
-              Stories not available
-            </div>
+            <div className="notAvailable">Stories not available</div>
           )}
 
           <div className="title">Events</div>
@@ -178,9 +172,7 @@ function CharacterDetail(props) {
               ])}
             </div>
           ) : (
-            <div className="title" style={{ fontSize: '40px', color: 'red' }}>
-              Events not available
-            </div>
+            <div className="notAvailable">Events not available</div>
           )}
         </div>
       </>
