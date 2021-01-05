@@ -24,7 +24,8 @@ Para o projeto ser realizado, foi utilizado as seguintes dependências para Reac
 
 ## Instalação
 Para instalar as dependências do projeto localmente, utilize a instrução abaixo:
-1. Digite no terminal ```yarn install``` e espere pela instalação das dependências, após isso, siga para a etapa de [Execução](#Execução)
+1. Após baixar o projeto, crie um arquivo .env com as váriaveis locais que podem ser encontradas no arquivo [.env.example](https://github.com/MrVtR/Desafio_Storm_Marvel/blob/main/.env.example) do repositório
+2. Digite no terminal ```yarn install``` e espere pela instalação das dependências, após isso, siga para a etapa de [Execução](#Execução)
 
 ## Execução
 Para executar o programa é necessário instalar as dependências utilizadas, que estão no package.json e após isso executar o projeto,para estar operações, utilize os comandos abaixo:
